@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- Header -->
+    <header>
+      <h1>🎙️ Voice AI</h1>
+      <span id="status-badge" class="badge listening">Listening</span>
+    </header>
+
+    <!-- Orb visualiser -->
+    <main>
+      <div class="orb-container">
+        <div id="orb" class="orb"></div>
+        <p id="state-label">Ready</p>
+      </div>
+
+      <!-- Transcript display -->
+      <div class="transcript-box">
+        <div id="transcript-you"   class="msg you">—</div>
+        <div id="transcript-ai"    class="msg ai">—</div>
+      </div>
+    </main>
+
+    <!-- Controls -->
+    <footer>
+      <button id="btn-mic" class="btn primary">🎤 Start Listening</button>
+      <button id="btn-interrupt" class="btn danger" disabled>✋ Interrupt</button>
+
+      <!-- RAG upload -->
+      <div class="rag-section">
+        <label for="rag-file">📄 Upload Knowledge Base (optional .txt)</label>
+        <input type="file" id="rag-file" accept=".txt" />
+        <span id="rag-status"></span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="ws.js"></script>
+  <script src="audio.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
